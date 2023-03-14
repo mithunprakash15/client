@@ -65,7 +65,7 @@ function HomeScreen() {
         temproom.push(r);
       }
     }
-    console.log("temp", temproom);
+    
     setRooms(temproom);
   }
 
