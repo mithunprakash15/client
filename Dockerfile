@@ -1,9 +1,11 @@
 FROM node:alpine
-WORKDIR /
+WORKDIR ./
 ENV PATH /node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm install --silent
-RUN npm install react-scripts@2.1.3 -g --silent
+RUN npm install --save react@18.1.0 
+RUN npm install --save --save-exact react-scripts@5.0.0
+
 COPY . ./
 CMD ["npm", "start"]
