@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "4e83e175-fbff-46f6-ac3e-630d0ea8f1cc",
+		"name": "Hotel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25870387"
+	},
+	"item": [
+		{
+			"name": "get all rooms",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get room id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"room\": \"640de430e19631e9ef8882db\"\n}"
+				},
+				"url": "localhost:4500/api/rooms/getroombyid"
+			},
+			"response": []
+		},
+		{
+			"name": "BookRoom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n  \"room\": \"Radisson Blu Plaza Hotel Mysore\",\n  \"roomId\": \"640de430e19631e9ef8882dc\",\n  \"userId\": \"mithun\",\n  \"fromdate\": \"18-03-2023\",\n  \"todate\": \"18-03-2023\",\n  \"totalDays\": \"3\",\n  \"status\": \"booked\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4500/api/bookroom"
+			},
+			"response": []
+		},
+		{
+			"name": "GetBookingByUserId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \n     \"6410928d5da38f42f0fc279f\"\n  \n  }"
+				},
+				"url": "http://localhost:4500/api/bookings/getBookingByUserId"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Rooms",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
