@@ -53,8 +53,10 @@ function HomeScreen() {
       if (r.currentbookings.length > 0) {
         for (const booking of r.currentbookings) {
           if (
-            dates[0].format(dateFormat) >= booking.fromdate &&
-            dates[1].format(dateFormat) <= booking.todate
+           (dates[0].format(dateFormat) >= booking.fromdate &&
+            dates[1].format(dateFormat) <= booking.todate) || (dates[0].format(dateFormat) < booking.fromdate &&
+            dates[1].format(dateFormat) > booking.todate) ||  (dates[0].format(dateFormat) < booking.fromdate &&
+            dates[1].format(dateFormat) <= booking.todate)
           ) {
             availability = false;
             break;
