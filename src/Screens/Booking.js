@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "../Components/Loader";
-import Error from "../Components/Error";
 
 import {Tag } from 'antd';
 function Booking() {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState();
+  const [, setError] = useState();
   const [booking, setbooking] = useState([]);
   const user = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -35,7 +34,7 @@ function Booking() {
       <div className="row">
         <div className="col-md-6">
           {loading && (<Loader />)}
-          {error && (<Error />)}
+     
           {booking &&
            ( booking.map(booking => {
               return  <div className="bs" key={booking._id}>
