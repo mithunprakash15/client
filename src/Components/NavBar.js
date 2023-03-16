@@ -1,18 +1,17 @@
 import React from "react";
 function NavBar() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
-  function logOut(){
-    localStorage.removeItem('currentUser');
-    window.location.href='/login';
-
+  function logOut() {
+    localStorage.removeItem("currentUser");
+    window.location.href = "/login";
   }
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/home">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a className="navbar-brand" href="/home">
         Book Hotel
       </a>
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNavAltMarkup"
@@ -20,40 +19,42 @@ function NavBar() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
+      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div className="navbar-nav ml-auto">
           {user ? (
             <>
-              <div class="dropdown mr-5">
+              <div className="dropdown mr-5">
                 <button
-                  class="btn btn-secondary dropdown-toggle"
+                  className="btn btn-secondary dropdown-toggle"
                   type="button"
                   id="dropdownMenuButton"
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                 {user.name}
+                  {user.name}
                 </button>
-                <div class="dropdown-menu mr" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="/bookings">
+                <div
+                  className="dropdown-menu mr"
+                  aria-labelledby="dropdownMenuButton"
+                >
+                  <a className="dropdown-item" href="/bookings">
                     Bookings
                   </a>
-                  <a class="dropdown-item" onClick={logOut}>
+                  <a className="dropdown-item" onClick={logOut} href="/#">
                     Log Out
                   </a>
-                  
                 </div>
               </div>
             </>
           ) : (
             <>
-              <a class="nav-item nav-link active" href="/register">
+              <a className="nav-item nav-link active" href="/register">
                 Register
               </a>
-              <a class="nav-item nav-link active" href="/login">
+              <a className="nav-item nav-link active" href="/login">
                 Login
               </a>
             </>

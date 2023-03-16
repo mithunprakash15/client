@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import NavBar from "./Components/NavBar";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomeScreen from "./Screens/HomeScreen";
 import BookingScreen from "./Screens/BookingScreen";
 import RegisterScreen from "./Screens/RegisterScreen";

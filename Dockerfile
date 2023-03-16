@@ -1,5 +1,5 @@
 FROM node:alpine
-WORKDIR ./
+WORKDIR /
 ENV PATH /node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./

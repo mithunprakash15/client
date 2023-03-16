@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -9,6 +10,9 @@
     "antd": "^5.3.1",
     "axios": "^1.3.4",
     "docker": "^1.0.0",
+    "docker-compose": "^0.23.19",
+    "dotenv": "^16.0.3",
+    "fsevents": "^1.2.11",
     "moment": "^2.29.4",
     "react": "^18.1.0",
     "react-bootstrap": "^2.7.2",
@@ -46,5 +50,10 @@
   "proxy": "http://localhost:4500/",
   "devDependencies": {
     "react-test-renderer": "^18.2.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
   }
 }

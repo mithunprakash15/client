@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import Loader from "../Components/Loader";
 import Sucess from "../Components/Sucess";
 import Error from "../Components/Error";
+
 
 function RegisterScreen() {
   const [name, setName] = useState("");
@@ -14,7 +15,7 @@ function RegisterScreen() {
   const [error, setError] = useState();
   const [sucess, setSucess] = useState();
   async function register() {
-    if (password == Cpassword) {
+    if (password === Cpassword) {
       const user = {
         name,
         email,
@@ -23,7 +24,7 @@ function RegisterScreen() {
       };
       try {
         setLoading(true);
-        const result = await axios.post("/api/users/register", user).data;
+        await axios.post("/api/users/register", user).data;
         setLoading(false);
         setSucess(true);
         setName("");
@@ -34,10 +35,12 @@ function RegisterScreen() {
         console.log(error);
         setLoading(false);
         setError(true);
+        
       }
     } else {
       console.log("error");
     }
+    
   }
   return (
     <div>

@@ -1,11 +1,11 @@
-import React, { Component }  from 'react';
-function Error({message}){
-    return (
-        <div>
-            <div class="alert alert-danger" role="alert">
-     {message}
+import React from "react";
+function Error({ message }) {
+  return (
+    <div>
+      <div class="alert alert-danger" role="alert">
+        {message}
+      </div>
     </div>
-        </div>
-    )
-    }
-    export default Error;
+  );
+}
+export default Error;

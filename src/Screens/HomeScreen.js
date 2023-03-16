@@ -4,17 +4,17 @@ import axios from "axios";
 import Room from "../Components/Room";
 import Loader from "../Components/Loader";
 import Error from "../Components/Error";
-import moment from "moment";
+
 import "antd/dist/reset.css";
-import { DatePicker, Space } from "antd";
+import { DatePicker } from "antd";
 const { RangePicker } = DatePicker;
 const dateFormat = "DD-MM-YYYY";
 function HomeScreen() {
   const [rooms, setRooms] = useState([]);
   useEffect(() => console.log(rooms), [rooms]);
   const [loading, setLoading] = useState();
-  const [error, setError] = useState();
-  const [fromdate, setfromdate] = useState();
+  const [ , setError] = useState();
+  const [fromdate, setFromDate] = useState();
   useEffect(() => console.log(fromdate), [fromdate]);
   const [todate, setToDate] = useState();
   useEffect(() => console.log(todate), [todate]);
@@ -45,7 +45,7 @@ function HomeScreen() {
 
     console.log(dates[0].format(dateFormat));
 
-    setfromdate(dates[0].format(dateFormat));
+    setFromDate(dates[0].format(dateFormat));
     setToDate(dates[1].format(dateFormat));
 
     for (const r of duplicateRooms) {
@@ -73,7 +73,7 @@ function HomeScreen() {
 
   return (
     <div className="container">
-      <div className="row mt-5 mr-auto ml-auto">
+      <div className="row justify-content-center mt-5">
         <div className="col-md-3 ">
           <RangePicker format="DD-MM-YYYY" onChange={filterByDate} />
         </div>
@@ -84,7 +84,7 @@ function HomeScreen() {
         ) : rooms.length >= 0 ? (
           rooms.map((room) => {
             return (
-              <div className="col-md-9 mt-2">
+              <div className="col-md-9 mt-2" key={room._id} >
                 <Room room={room} fromdate={fromdate} todate={todate}></Room>
               </div>
             );
